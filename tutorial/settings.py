@@ -26,6 +26,11 @@ SECRET_KEY = 'mrjo3^=yg9h%!a0npz52m6_cppdy%bbfo47tadw_*4r+#e4vss'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+# CORS permissions
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+
 
 # REST api settings modules
 
@@ -43,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'snippets',
 ]
@@ -55,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'tutorial.urls'
